@@ -21,6 +21,11 @@ app.get("/register", (req, res) => {
     res.render("register");
 });
 
+app.post("/submit", (req, res) => {
+    const text = req.body.text;
+    res.render("home", {text});
+});
+
 app.post("/register", async (req, res) => {
     const data = {
         name: req.body.username,
